@@ -26,13 +26,40 @@ The proposed algorithm for event detection and response process involves four di
 
 Each sensor's "sender" code is included inside the specific folder as well as it's readme file elaborating on the sensor setup.
 
+```
+.
+├── access_cam.py     // A briefly explanation for each file/folder 
+├── client.py         //
+├── control.py        //
+├── Imports
+├── LICENSE
+├── PIR_Sensor
+├── Radar_Sensor
+├── README.md
+├── receiver.py
+├── tracker_coco
+├── tracker_tflite
+└── Vib_Sensor
+```
+
 There are also two different object detection codes:
-1. Coco SSD based
+1. Coco SSD based [Link to tutorial](https://xxxxx)
 	- This was a failed attempt because the frame marked around a person detected was not centered correctly, making it very hard for the robot to track.
-2. Tensorflow Lite based
+2. Tensorflow Lite based [Link to tutorial](https://xxxxxx)
 	- This was the object detection used in the final product. However, with an average of 1.3 fps, the tracking of the car is somewhat slow and may lose the target with any quick movement, leaving plenty of room for improvement
 
+### Run the Code
+
+Please add the command to separately test each sensor here, and how to run the whole system.
+
+* To run the robot car
+* To run the human detector
+* To run the radar sensor
+* To run the PIR sensor
+* To run the vibration sensor
+
 ## Results
+
 We ran several tests to determine the accuracy and reliability of our final product.
 
 The **radar sensor** was compared to the readings from an Apple Watch (2nd generation), showing very similar values as well as a quick response.
