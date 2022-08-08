@@ -28,35 +28,52 @@ Each sensor's "sender" code is included inside the specific folder as well as it
 
 ```
 .
-├── access_cam.py     // A briefly explanation for each file/folder 
-├── client.py         //
-├── control.py        //
-├── Imports
+├── access_cam.py     // access default camera on raspberry pi
+├── client.py         // runs complete system
+├── control.py        // controls front wheels, back wheels, and camera servos with keyboard (run as sudo)
+├── Imports           // contains import files
 ├── LICENSE
-├── PIR_Sensor
-├── Radar_Sensor
+├── PIR_Sensor        // contains code that reads sensor info and sends it to car and notification
+├── Radar_Sensor      // contains code that reads sensor info, prints it, and sends notification
 ├── README.md
-├── receiver.py
-├── tracker_coco
-├── tracker_tflite
-└── Vib_Sensor
+├── receiver.py       // receives info from sensors and breaks when one is activated
+├── tracker_coco      // contains object detection code and its trained model files (coco ssd)
+├── tracker_tflite    // contains object detection code and its trained model files (tensorflow lite)
+└── Vib_Sensor        // contains code that reads sensor info and sends it to car and notification
 ```
 
 There are also two different object detection codes:
-1. Coco SSD based [Link to tutorial](https://xxxxx)
+1. Coco SSD based [(Link to tutorial)](https://core-electronics.com.au/guides/object-identify-raspberry-pi/)
 	- This was a failed attempt because the frame marked around a person detected was not centered correctly, making it very hard for the robot to track.
-2. Tensorflow Lite based [Link to tutorial](https://xxxxxx)
+2. Tensorflow Lite based [(Link to tutorial)](https://github.com/tensorflow/examples/tree/master/lite/examples/object_detection/raspberry_pi)
 	- This was the object detection used in the final product. However, with an average of 1.3 fps, the tracking of the car is somewhat slow and may lose the target with any quick movement, leaving plenty of room for improvement
 
 ### Run the Code
+When downloaded the complete repository and its requirements:
 
-Please add the command to separately test each sensor here, and how to run the whole system.
+* To run the robot car: 
+```
+python3 client.py
+```
 
-* To run the robot car
-* To run the human detector
+* To run the human detector:
+```
+python3 tracker.py
+```
+
 * To run the radar sensor
+```
+python3 heart_breath.py
+```
+
 * To run the PIR sensor
-* To run the vibration sensor
+```
+python3 pir.py
+```
+
+* To run the vibration sensor: 
+
+    Upload code into arduino with sensor and computer connected to view values printed
 
 ## Results
 
